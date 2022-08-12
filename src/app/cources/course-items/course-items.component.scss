@@ -1,0 +1,25 @@
+.items-layout {
+    margin-top: 29px;
+    display: flex;
+    padding: 0px 110px;
+    img {
+        height:273px;
+        width: 273px;
+    }
+
+    .details {
+        padding: 0px 93px;
+        .header {
+            display: flex;
+            flex-direction: column;
+            color: black;
+            font-size: 19px;
+            margin: 12.5px 0px;
+        }
+        .desc {
+            color: #333333;
+            font-size: 16px;
+        }
+    }
+    
+}

@@ -1,0 +1,41 @@
+<div class="head-layout">
+  <span class="padd-image">
+    <img
+      src="assets/images/head-baner.png"
+      class="header-image"
+      alt="header image"
+  /></span>
+
+  <span class="float-left w-100 header-style">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['']">HOME <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['courses']">COURSES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['posters']">POSTERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['contact']">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </span>
+</div>

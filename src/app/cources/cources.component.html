@@ -1,0 +1,9 @@
+<div>
+  <app-course-items
+    *ngFor="let item of courses; index as i"
+    [image]="item.image"
+    [heading]="item.heading"
+    [description]="item.description"
+    [counter]="i+1"
+  ></app-course-items>
+</div>

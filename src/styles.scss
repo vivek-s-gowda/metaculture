@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+    --primary-font: 'Nunito Sans';
+    --secondary-font: 'Noto Sans';
+    --primary-color: #809fbf;
+    --primary-color-rgb: 128, 159, 191;
+}
+
+.body-with-padding {
+    padding: 0px 110px;
+    padding-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body-with-padding {
+        padding: 0px 10px;
+    }
+  }

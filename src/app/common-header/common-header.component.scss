@@ -1,0 +1,33 @@
+
+.head-layout
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .padd-image{
+        padding: 30px 0px;
+        .header-image {
+            width: 250px;
+            height: 85px;
+        }
+    }
+
+    .header-style {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 110px;
+        border-top: 1px solid rgba(var(--primary-color-rgb), 0.15);
+        border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.15);
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .head-layout
+    {
+        .header-style {
+            padding-left: 10px;
+        }
+    }
+  }

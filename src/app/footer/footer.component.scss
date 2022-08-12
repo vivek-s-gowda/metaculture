@@ -1,0 +1,43 @@
+.footer-layout {
+    background-color: black;
+    width: 100%;
+    height: 12vh;
+    margin-top: 6vh;
+    padding: 20px 110px;
+    display: flex;
+    justify-content: space-between;
+
+    .copyright {
+        color: white;
+        .no-style {
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-layout {
+        background-color: black;
+        width: 100%;
+        height: 30vh;
+
+    padding: 20px 10px;
+        margin-top: 6vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    
+        .copyright {
+            color: white;
+            .no-style {
+                text-decoration: none;
+                color: #fff;
+                font-size: 15px;
+            }
+        }
+        
+    }
+  }
