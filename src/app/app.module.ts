@@ -12,6 +12,7 @@ import { PostersComponent } from './posters/posters.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CourseItemsComponent } from './cources/course-items/course-items.component';
+import { PosterItemsComponent } from './posters/poster-items/poster-items.component';
 
 const appRoutes: Routes = [
   {
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     PostersComponent,
     ContactComponent,
     PageNotFoundComponent,
-    CourseItemsComponent
+    CourseItemsComponent,
+    PosterItemsComponent
   ],
   imports: [
     BrowserModule,

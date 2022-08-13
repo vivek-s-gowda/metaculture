@@ -1,1 +1,3 @@
-<p>posters works!</p>
+<div class="poster-layout"> 
+    <app-poster-items *ngFor="let poster of postres;index as i" [image]="poster.image" [shortline]="poster.title"></app-poster-items>
+</div>
