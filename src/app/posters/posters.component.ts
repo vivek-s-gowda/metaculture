@@ -11,53 +11,66 @@ export class PostersComponent implements OnInit {
   postres = [
     {
       image: 'assets/images/posters/poster1.png',
-      title: 'Crazy Governing Ourselves',
+      heading: 'Crazy Governing Ourselves',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster2.png',
-      title: 'Dialogue is a Compromise',
+      heading: 'Dialogue is a Compromise',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster3.png',
-      title: 'Astonishing Idea That We Can Think ',
+      heading: 'Astonishing Idea That We Can Think ',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster4.png',
-      title: 'A Government Better Than Us',
+      heading: 'A Government Better Than Us',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster5.png',
-      title: 'We Know It Is There',
+      heading: 'We Know It Is There',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster6.png',
-      title: 'Pickle',
+      heading: 'Pickle',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster7.png',
-      title: 'Donut',
+      heading: 'Donut',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster8.png',
-      title: 'Books Burning ',
+      heading: 'Books Burning ',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster9.png',
-      title: 'Middle Finger ',
+      heading: 'Middle Finger ',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster10.png',
-      title: 'Congratulations On Your Voice',
+      heading: 'Congratulations On Your Voice',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster11.png',
-      title: 'Feelings Are Easy',
+      heading: 'Feelings Are Easy',
+      cost:'150'
     },
     {
       image: 'assets/images/posters/poster12.png',
-      title: 'Cupackes',
+      heading: 'Cupackes',
+      cost:'150'
     },
   ];
 
   ngOnInit(): void {}
+
 }

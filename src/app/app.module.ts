@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CourseItemsComponent } from './cources/course-items/course-items.component';
 import { PosterItemsComponent } from './posters/poster-items/poster-items.component';
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'courses', component:  CourcesComponent},
   { path: 'posters', component:  PostersComponent},
   { path: 'contact', component:  ContactComponent},
+  { path: 'cart', component:  CartComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     ContactComponent,
     PageNotFoundComponent,
     CourseItemsComponent,
-    PosterItemsComponent
+    PosterItemsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

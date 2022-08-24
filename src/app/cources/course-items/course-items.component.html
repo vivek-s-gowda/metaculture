@@ -7,5 +7,10 @@
       >
     </span>
     <p class="desc">{{ description }}</p>
+    <div class="cost-cart">
+
+      <div><strong>Cost</strong> : ${{cost}}</div>
+      <button class="btn btn-style" (click)="addToCart(item)">Add to cart</button>
+    </div>
   </span>
 </div>
