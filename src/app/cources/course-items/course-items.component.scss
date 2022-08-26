@@ -35,3 +35,46 @@
     }
     
 }
+
+@media only screen and (max-width: 600px) {
+    .items-layout {
+        margin-top: 29px;
+        display: flex;
+        padding: 0 11px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            height:273px;
+            width: 273px;
+        }
+    
+        .details {
+            padding: 0px 0px;
+            .header {
+                display: flex;
+                flex-direction: column;
+                color: black;
+                font-size: 19px;
+                margin: 12.5px 0px;
+            }
+            .desc {
+                color: #333333;
+                font-size: 16px;
+            }
+            
+            .cost-cart {
+                display: flex;
+                align-items: center;
+                .btn-style {
+                    margin-left: 20px;
+                    color: aliceblue;
+                    background-color: #219232;
+                }
+            }
+    
+    
+        }
+        
+    }
+  }
