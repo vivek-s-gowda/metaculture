@@ -14,6 +14,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CourseItemsComponent } from './cources/course-items/course-items.component';
 import { PosterItemsComponent } from './posters/poster-items/poster-items.component';
 import { CartComponent } from './cart/cart.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -44,6 +47,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxStripeModule.forRoot('pk_test_51ILY4WL6352tfZcGaBspzuGTKIjdDJY9InSqoship9ERNaKEiGscPGzpo49gZNGbVawO1nJoGU58DVqczMe8jG0n00r1oh4WnL'),
     RouterModule.forRoot(
       appRoutes
     )

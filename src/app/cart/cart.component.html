@@ -1,9 +1,9 @@
 <div class="cart-layout">
   <div class="left-layout-container">
-    <div class="items" *ngFor="let item of items;index as i">
+    <div class="items" *ngFor="let item of items; index as i">
       <img [src]="item.image" alt="" />
-      <div class="title">{{item.heading}}</div>
-      <div class="cost">${{item.cost}}</div>
+      <div class="title">{{ item.heading }}</div>
+      <div class="cost">${{ item.cost }}</div>
       <div class="delete" (click)="delete(i)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,25 +21,19 @@
       </div>
     </div>
 
-
-
-      <div class="items">
-        <div class="delete">
-        </div>
-        <!-- <img src="assets/images/icons/cart.png" class="small-icon" alt="" /> -->
-        <div class="title">Total</div>
-        <div class="cost">${{totalCost}}</div>
-        <div class="delete">
-        </div>
-      </div>
+    <div class="items">
+      <div class="delete"></div>
+      <!-- <img src="assets/images/icons/cart.png" class="small-icon" alt="" /> -->
+      <div class="title">Total</div>
+      <div class="cost">${{ totalCost }}</div>
+      <div class="delete"></div>
+    </div>
   </div>
 
   <div class="right-layout-container">
     <div class="form">
-        <div class="details">
-            Personal Information for delivery
-        </div>
-        <input type="text" class="input" placeholder="Name">
+      <div class="details">Personal Information for delivery</div>
+      <!-- <input type="text" class="input" placeholder="Name">
         <input type="text" class="input" placeholder="Phonenumber">
         <input type="text" class="input" placeholder="Email">
 
@@ -48,7 +42,42 @@
         <input type="text" class="input" placeholder="City">
         <input type="text" class="input" placeholder="City-Code">
 
-        <button class="btn">Proceed to payment</button>
+        <ngx-stripe-card [options]="cardOptions"></ngx-stripe-card>
+<button (click)="buy()">CLICK</button>
+        <button class="btn">Proceed to payment</button> -->
+
+      <div [formGroup]="paymentElementForm">
+        <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+        <input class="input" placeholder="Name" formControlName="name" />
+        <!-- </mat-form-field> -->
+        <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+        <input
+          class="input"
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+        />
+        <!-- </mat-form-field> -->
+        <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+        <input class="input" placeholder="Address" formControlName="address" />
+        <!-- </mat-form-field> -->
+        <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+        <input class="input" placeholder="ZIP Code" formControlName="zipcode" />
+        <!-- </mat-form-field> -->
+        <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+        <input class="input" placeholder="city" formControlName="city" />
+        <!-- </mat-form-field> -->
+
+        <div class="payment-area">
+          <label>Card details</label>
+          <ngx-stripe-card
+            [options]="cardOptions"
+            [elementsOptions]="elementsOptions"
+          ></ngx-stripe-card>
+        </div>
+
+        <button class="btn" (click)="pay()">PAY ${{totalCost}}</button>
+      </div>
     </div>
   </div>
 </div>
