@@ -62,7 +62,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.updateList();
 
-    this.paymentElementForm.get('amount')?.setValue(this.totalCost+0.00)
+    this.paymentElementForm.get('amount')?.setValue(this.totalCost*100)
     this.createPaymentIntent(this.paymentElementForm.get('amount')?.value)
     .subscribe((pi: any) => {
       console.log('eeee',pi)

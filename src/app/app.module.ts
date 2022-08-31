@@ -59,7 +59,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgxStripeModule.forRoot(
-      'pk_test_51ILY4WL6352tfZcGaBspzuGTKIjdDJY9InSqoship9ERNaKEiGscPGzpo49gZNGbVawO1nJoGU58DVqczMe8jG0n00r1oh4WnL'
+      'pk_test_51LaJOSJIKT96wNYEYrCXpVsgJoou1CFp333C7FchRD3bM9ysc3gEj6moom8JljlNJ2WfXfNLOEBrv84nsmp87Jqq0074BYnbgK'
     ),
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
