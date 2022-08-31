@@ -12,7 +12,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  @ViewChild(StripeCardComponent) card!: StripeCardComponent;
+  // @ViewChild(StripeCardComponent) card!: StripeCardComponent;
+
+  @ViewChild(StripePaymentElementComponent)
+  paymentElement!: StripePaymentElementComponent;
 
   constructor(
     private cartService: CartService,
@@ -25,13 +28,18 @@ export class CartComponent implements OnInit {
   totalCost: number = 0;
 
   paymentElementForm = this.fb.group({
-    name: [''],
-    email: [''],
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
     address: [''],
     zipcode: [''],
     city: [''],
-    amount: [2500],
+    amount: [2500, [Validators.required, Validators.pattern(/d+/)]]
   });
+
+  elementsOptions: StripeElementsOptions = {
+    locale: 'en',
+    clientSecret:''
+  };
 
   cardOptions: StripeCardElementOptions = {
     style: {
@@ -48,14 +56,18 @@ export class CartComponent implements OnInit {
     },
   };
 
-  elementsOptions: StripeElementsOptions = {
-    locale: 'en'
-  };
 
   paying = false;
 
   ngOnInit(): void {
     this.updateList();
+
+    this.paymentElementForm.get('amount')?.setValue(this.totalCost+0.00)
+    this.createPaymentIntent(this.paymentElementForm.get('amount')?.value)
+    .subscribe((pi: any) => {
+      console.log('eeee',pi)
+      this.elementsOptions.clientSecret = pi.clientSecret as string;
+    });
   }
 
   updateList() {
@@ -73,11 +85,10 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
-    if (this.paymentElementForm.valid) {
       this.paying = true;
       this.stripeService
         .confirmPayment({
-          elements: this.card.elements,
+          elements: this.paymentElement.elements,
           confirmParams: {
             payment_method_data: {
               billing_details: {
@@ -102,6 +113,7 @@ export class CartComponent implements OnInit {
           this.createPaymentIntent(
             this.paymentElementForm.get('amount')?.value
           ).subscribe((pi) => {
+            console.log('eeee',pi)
             this.elementsOptions.clientSecret = pi.client_secret as string;
           });
           if (result.error) {
@@ -111,18 +123,15 @@ export class CartComponent implements OnInit {
             // The payment has been processed!
             if (result.paymentIntent.status === 'succeeded') {
               // Show a success message to your customer
-              alert({ success: true });
+              alert("Order Placed Payment Successfull");
             }
           }
         });
-    } else {
-      console.log("in else", this.paymentElementForm);
-    }
   }
 
-  private createPaymentIntent(amount: any): Observable<PaymentIntent> {
+  createPaymentIntent(amount: any): Observable<PaymentIntent> {
     return this.http.post<PaymentIntent>(
-      `${'http://localhost:4242'}/create-payment-intent`,
+      `${'https://metaculture-payment-service.herokuapp.com'}/create-payment-intent`,
       { amount }
     );
   }

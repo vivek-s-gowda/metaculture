@@ -17,17 +17,25 @@ import { CartComponent } from './cart/cart.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
-  { path: 'courses', component:  CourcesComponent},
-  { path: 'posters', component:  PostersComponent},
-  { path: 'contact', component:  ContactComponent},
-  { path: 'cart', component:  CartComponent},
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'courses', component: CourcesComponent },
+  { path: 'posters', component: PostersComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'cart', component: CartComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -42,7 +50,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     CourseItemsComponent,
     PosterItemsComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,12 +58,19 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_51ILY4WL6352tfZcGaBspzuGTKIjdDJY9InSqoship9ERNaKEiGscPGzpo49gZNGbVawO1nJoGU58DVqczMe8jG0n00r1oh4WnL'),
-    RouterModule.forRoot(
-      appRoutes
-    )
+    NgxStripeModule.forRoot(
+      'pk_test_51ILY4WL6352tfZcGaBspzuGTKIjdDJY9InSqoship9ERNaKEiGscPGzpo49gZNGbVawO1nJoGU58DVqczMe8jG0n00r1oh4WnL'
+    ),
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatInputModule,
+    MatToolbarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
