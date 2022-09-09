@@ -10,67 +10,151 @@ export class PostersComponent implements OnInit {
 
   postres = [
     {
-      image: 'assets/images/posters/poster1.png',
+      image: 'assets/images/poster1/poster1.jpg',
+      heading: 'Astonishing Idea That We Can Think',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster2.jpg',
+      heading: 'breakfast of sapiens',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster3.jpg',
+      heading: 'Burning books',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster4.jpg',
+      heading: 'Chicken tikka',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster5.jpg',
+      heading: 'Voice, what now',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster6.jpg',
       heading: 'Crazy Governing Ourselves',
-      cost:'150'
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster2.png',
+      image: 'assets/images/poster1/poster7.jpg',
+      heading: 'Critical Thinking not Intuitive',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster8.jpg',
+      heading: 'Democracy better than us ',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster9.jpg',
+      heading: 'Crazy Governing Ourselves',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster10.jpg',
+      heading: 'Democracy Dies As Spectacle',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster11.jpg',
+      heading: 'Democracy_is_not_for_Wimps',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster12.jpg',
+      heading: 'Demons and angels',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster13.jpg',
       heading: 'Dialogue is a Compromise',
-      cost:'150'
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster3.png',
-      heading: 'Astonishing Idea That We Can Think ',
-      cost:'150'
-    },
-    {
-      image: 'assets/images/posters/poster4.png',
-      heading: 'A Government Better Than Us',
-      cost:'150'
-    },
-    {
-      image: 'assets/images/posters/poster5.png',
-      heading: 'We Know It Is There',
-      cost:'150'
-    },
-    {
-      image: 'assets/images/posters/poster6.png',
-      heading: 'Pickle',
-      cost:'150'
-    },
-    {
-      image: 'assets/images/posters/poster7.png',
+      image: 'assets/images/poster1/poster14.jpg',
       heading: 'Donut',
-      cost:'150'
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster8.png',
-      heading: 'Books Burning ',
-      cost:'150'
+      image: 'assets/images/poster1/poster15.jpg',
+      heading: 'Excruciating clarity',
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster9.png',
-      heading: 'Middle Finger ',
-      cost:'150'
+      image: 'assets/images/poster1/poster16.jpg',
+      heading: 'Feelings are Easy',
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster10.png',
-      heading: 'Congratulations On Your Voice',
-      cost:'150'
+      image: 'assets/images/poster1/poster17.jpg',
+      heading: 'Freedom_and_Cupcakes',
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster11.png',
-      heading: 'Feelings Are Easy',
-      cost:'150'
+      image: 'assets/images/poster1/poster18.jpg',
+      heading: 'Goldfish',
+      cost: '150',
     },
     {
-      image: 'assets/images/posters/poster12.png',
-      heading: 'Cupackes',
-      cost:'150'
+      image: 'assets/images/poster1/poster19.jpg',
+      heading: 'Here LIES THE TRUTH',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster20.jpg',
+      heading: 'Introduction',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster21.jpg',
+      heading: 'Justice or Revenge',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster22.jpg',
+      heading: 'Justice or Revenge',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster23.jpg',
+      heading: 'Move fast, break things',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster24.jpg',
+      heading: 'Moving to California',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster25.jpg',
+      heading: 'Politics of Suffering',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster26.jpg',
+      heading: 'Politics of Suffering',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster27.jpg',
+      heading: 'Porches and Portals',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster28.jpg',
+      heading: 'Voice Noice',
+      cost: '150',
+    },
+    {
+      image: 'assets/images/poster1/poster29.jpg',
+      heading: 'Congratulations on Your Voice',
+      cost: '150',
     },
   ];
 
   ngOnInit(): void {}
-
 }
