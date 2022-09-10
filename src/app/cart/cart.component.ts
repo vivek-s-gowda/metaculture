@@ -1,10 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CartService } from '../cart.service';
-import { StripeService, StripePaymentElementComponent, StripeCardComponent } from 'ngx-stripe';
-import { StripeElementsOptions, PaymentIntent, StripeCardElementOptions } from '@stripe/stripe-js';
+import {
+  StripeService,
+  StripePaymentElementComponent,
+  StripeCardComponent,
+} from 'ngx-stripe';
+import {
+  StripeElementsOptions,
+  PaymentIntent,
+  StripeCardElementOptions,
+} from '@stripe/stripe-js';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DataService } from '../data.service';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +35,9 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private http: HttpClient,
     private fb: FormBuilder,
-    private stripeService: StripeService
+    private stripeService: StripeService,
+    private dataService: DataService,
+    private _snackBar: MatSnackBar
   ) {}
   items: any = [];
   name: string = '';
@@ -33,12 +49,13 @@ export class CartComponent implements OnInit {
     address: [''],
     zipcode: [''],
     city: [''],
-    amount: [2500, [Validators.required, Validators.pattern(/d+/)]]
+    amount: [2500, [Validators.required, Validators.pattern(/d+/)]],
+    items: [''],
   });
 
   elementsOptions: StripeElementsOptions = {
     locale: 'en',
-    clientSecret:''
+    clientSecret: '',
   };
 
   cardOptions: StripeCardElementOptions = {
@@ -56,17 +73,19 @@ export class CartComponent implements OnInit {
     },
   };
 
-
   paying = false;
+  orders: any = [];
 
   ngOnInit(): void {
     this.updateList();
-
-    this.paymentElementForm.get('amount')?.setValue(this.totalCost*100)
-    this.createPaymentIntent(this.paymentElementForm.get('amount')?.value)
-    .subscribe((pi: any) => {
-      console.log('eeee',pi)
+    this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100);
+    this.createPaymentIntent(
+      this.paymentElementForm.get('amount')?.value
+    ).subscribe((pi: any) => {
       this.elementsOptions.clientSecret = pi.clientSecret as string;
+      this.dataService.getData().subscribe((values: any) => {
+        this.orders = values[2];
+      });
     });
   }
 
@@ -78,6 +97,7 @@ export class CartComponent implements OnInit {
   delete(index: number) {
     this.cartService.deleteItem(index);
     this.updateList();
+    this.openSnackBar('Item removed ..!');
   }
 
   getTotalCost() {
@@ -85,48 +105,47 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
-      this.paying = true;
-      this.stripeService
-        .confirmPayment({
-          elements: this.paymentElement.elements,
-          confirmParams: {
-            payment_method_data: {
-              billing_details: {
-                name: this.paymentElementForm.get('name')?.value as string,
-                email: this.paymentElementForm.get('email')?.value as string,
-                address: {
-                  line1: this.paymentElementForm.get('address')?.value || '',
-                  postal_code:
-                    this.paymentElementForm.get('zipcode')?.value || '',
-                  city: this.paymentElementForm.get('city')?.value || '',
-                },
+    this.paying = true;
+    this.stripeService
+      .confirmPayment({
+        elements: this.paymentElement.elements,
+        confirmParams: {
+          payment_method_data: {
+            billing_details: {
+              name: this.paymentElementForm.get('name')?.value as string,
+              email: this.paymentElementForm.get('email')?.value as string,
+              address: {
+                line1: this.paymentElementForm.get('address')?.value || '',
+                postal_code:
+                  this.paymentElementForm.get('zipcode')?.value || '',
+                city: this.paymentElementForm.get('city')?.value || '',
               },
             },
           },
+        },
 
-          redirect: 'if_required',
-          
-        })
-        .subscribe((result: any) => {
-          this.paying = false;
-          console.log('Result', result);
-          this.createPaymentIntent(
-            this.paymentElementForm.get('amount')?.value
-          ).subscribe((pi) => {
-            console.log('eeee',pi)
-            this.elementsOptions.clientSecret = pi.client_secret as string;
-          });
-          if (result.error) {
-            // Show error to your customer (e.g., insufficient funds)
-            alert({ success: false, error: result.error.message });
-          } else {
-            // The payment has been processed!
-            if (result.paymentIntent.status === 'succeeded') {
-              // Show a success message to your customer
-              alert("Order Placed Payment Successfull");
-            }
-          }
+        redirect: 'if_required',
+      })
+      .subscribe((result: any) => {
+        this.paying = false;
+        this.createPaymentIntent(
+          this.paymentElementForm.get('amount')?.value
+        ).subscribe((pi) => {
+          this.elementsOptions.clientSecret = pi.client_secret as string;
         });
+        if (result.error) {
+          this.openSnackBar('Error '+result.error.message);
+          // alert({ success: false, error: result.error.message });
+        } else {
+          if (result.paymentIntent.status === 'succeeded') {
+            this.paymentElementForm.value.items = this.items;
+            this.orders.push(this.paymentElementForm.value);
+            this.dataService.addData('orders', this.orders);
+            this.openSnackBar('Order Placed Payment Successfull');
+            // alert('Order Placed Payment Successfull');
+          }
+        }
+      });
   }
 
   createPaymentIntent(amount: any): Observable<PaymentIntent> {
@@ -134,5 +153,13 @@ export class CartComponent implements OnInit {
       `${'https://metaculture-payment-service.herokuapp.com'}/create-payment-intent`,
       { amount }
     );
+  }
+
+  openSnackBar(text: string) {
+    this._snackBar.open(text, 'Okay ', {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      duration: 2 * 1000,
+    });
   }
 }

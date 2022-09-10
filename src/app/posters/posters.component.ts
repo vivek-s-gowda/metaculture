@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-posters',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posters.component.scss'],
 })
 export class PostersComponent implements OnInit {
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   postres = [
     {
@@ -156,5 +157,11 @@ export class PostersComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.getData().subscribe((values:any)=>{
+      console.log(values)
+    })
+  }
+
+
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +8,25 @@ import { Subject } from 'rxjs';
 export class DataService {
   public cartItems: any = [];
   public getCartCount: Subject<number> = new Subject();
-  constructor() {
+  private dbPath = '/metaculture';
+
+  user!: AngularFireList<any>;
+
+  constructor(
+    private fireBase: AngularFireDatabase,) {
     if(localStorage.getItem('cartitems'))
       this.cartItems = JSON.parse(localStorage.getItem('cartitems') as string);
+
+
+    this.user = fireBase.list(this.dbPath);
+  }
+
+  getData(): Observable<any> {
+    return this.user.valueChanges();
+  }
+
+  addData(id: string, data: any): any {
+    return this.user.set(id, data);
   }
 
   addToCart(item: any) {

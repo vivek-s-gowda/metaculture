@@ -25,6 +25,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {
@@ -59,7 +66,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgxStripeModule.forRoot(
-      'pk_test_51LaJOSJIKT96wNYEYrCXpVsgJoou1CFp333C7FchRD3bM9ysc3gEj6moom8JljlNJ2WfXfNLOEBrv84nsmp87Jqq0074BYnbgK'
+      'pk_test_51ILY4WL6352tfZcGaBspzuGTKIjdDJY9InSqoship9ERNaKEiGscPGzpo49gZNGbVawO1nJoGU58DVqczMe8jG0n00r1oh4WnL'
     ),
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
@@ -69,6 +76,11 @@ const appRoutes: Routes = [
     MatDividerModule,
     MatInputModule,
     MatToolbarModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    MatSnackBarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],
