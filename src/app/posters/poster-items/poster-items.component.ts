@@ -26,6 +26,8 @@ export class PosterItemsComponent implements OnInit {
   }
 
   addToCart(item:any) {
+    item.date = Date.now()
+    item.type = 'POSTER';
     this.cartService.addToCart(item)
     this.openSnackBar()
   }

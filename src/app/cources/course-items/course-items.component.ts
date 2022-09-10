@@ -21,6 +21,8 @@ export class CourseItemsComponent implements OnInit {
 
   addToCart(item:any)
   {
+    item.date = Date.now();
+    item.type = 'COURSE';
     this.cartService.addToCart(item);
     this.openSnackBar()
   }

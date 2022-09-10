@@ -51,6 +51,7 @@ export class CartComponent implements OnInit {
     city: [''],
     amount: [2500, [Validators.required, Validators.pattern(/d+/)]],
     items: [''],
+    date:['']
   });
 
   elementsOptions: StripeElementsOptions = {
@@ -74,17 +75,20 @@ export class CartComponent implements OnInit {
   };
 
   paying = false;
-  orders: any = [];
+  orders: any = [{name:'test'}];
 
   ngOnInit(): void {
     this.updateList();
+
+    this.dataService.addData('orders', this.orders);
     this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100);
     this.createPaymentIntent(
       this.paymentElementForm.get('amount')?.value
     ).subscribe((pi: any) => {
       this.elementsOptions.clientSecret = pi.clientSecret as string;
       this.dataService.getData().subscribe((values: any) => {
-        this.orders = values[2];
+        console.log(values)
+        // this.orders = values.orders;
       });
     });
   }
@@ -139,6 +143,7 @@ export class CartComponent implements OnInit {
         } else {
           if (result.paymentIntent.status === 'succeeded') {
             this.paymentElementForm.value.items = this.items;
+            this.paymentElementForm.value.date = Date.now().toString();
             this.orders.push(this.paymentElementForm.value);
             this.dataService.addData('orders', this.orders);
             this.openSnackBar('Order Placed Payment Successfull');
