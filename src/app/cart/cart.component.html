@@ -33,41 +33,7 @@
   <div class="right-layout-container">
     <div class="form">
       <div class="details">Personal Information for delivery</div>
-      <!-- <input type="text" class="input" placeholder="Name">
-        <input type="text" class="input" placeholder="Phonenumber">
-        <input type="text" class="input" placeholder="Email">
 
-        <input type="text" class="input" placeholder="Address 1">
-        <input type="text" class="input" placeholder="Address 2">
-        <input type="text" class="input" placeholder="City">
-        <input type="text" class="input" placeholder="City-Code">
-
-        <ngx-stripe-card [options]="cardOptions"></ngx-stripe-card>
-<button (click)="buy()">CLICK</button>
-        <button class="btn">Proceed to payment</button> -->
-
-      <!-- <div [formGroup]="paymentElementForm">
-        <input class="input" placeholder="Name" formControlName="name" />
-        <input
-          class="input"
-          placeholder="Email"
-          type="email"
-          formControlName="email"
-        />
-        <input class="input" placeholder="Address" formControlName="address" />
-        <input class="input" placeholder="ZIP Code" formControlName="zipcode" />
-        <input class="input" placeholder="city" formControlName="city" />
-
-        <div class="payment-area">
-          <label>Card details</label>
-          <ngx-stripe-card
-            [options]="cardOptions"
-            [elementsOptions]="elementsOptions"
-          ></ngx-stripe-card>
-        </div>
-
-        <button class="btn" (click)="createPaymentIntent('2000')">PAY ${{totalCost}}</button>
-      </div> -->
 
       <div [formGroup]="paymentElementForm">
         <input
@@ -76,29 +42,10 @@
           placeholder="Name*"
           formControlName="name"
         />
-        <!-- <input type="text" class="input" placeholder="Phonenumber" /> -->
         <input type="text" class="input" placeholder="Email*" formControlName="email"/>
-
         <input type="text" class="input" placeholder="Address" formControlName="address"/>
-        <!-- <input type="text" class="input" placeholder="Address 2" /> -->
         <input type="text" class="input" placeholder="City" formControlName="city"  />
         <input type="text" class="input" placeholder="Zip Code" formControlName="zipcode"/>
-        <!-- <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder="Name" formControlName="name" />
-        </mat-form-field> 
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder="Email" type="email" formControlName="email" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder="Address" formControlName="address" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder="ZIP Code" formControlName="zipcode" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder="city" formControlName="city" />
-        </mat-form-field>
-      -->
         <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
           <ngx-stripe-payment [clientSecret]="clientSecret">
           </ngx-stripe-payment>

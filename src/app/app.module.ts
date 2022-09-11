@@ -7,7 +7,7 @@ import { CommonHeaderComponent } from './common-header/common-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CourcesComponent } from './cources/cources.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, DialogOverviewExampleDialog } from './home/home.component';
 import { PostersComponent } from './posters/posters.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -58,6 +58,7 @@ const appRoutes: Routes = [
     CourseItemsComponent,
     PosterItemsComponent,
     CartComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
