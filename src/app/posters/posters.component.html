@@ -1,4 +1,43 @@
-<div class="poster-layout">
+<div class="head-section">
+  <img src="assets/images/poster.png" />
+
+  <div class="text-area">
+  <div class="heading">
+    This poster exhibition is currently being held at Busboys and Poets (corner
+    of 14th and V Streets), Washington DC. It is open all week, during normal
+    business hours. It will be on display until January 2023.
+  </div>
+    <div class="tag">
+      Creating posters is for me cathartic and fun. It is not my vocation.
+    </div>
+    <div class="content">
+      <p>
+        Like others inspired by the Civil Rights Movement of the Nineteen
+        Sixties and Seventies, and soaring visions of world Peace, Love,
+        Equality, and Justice, I saw my role in the world in, similarly,
+        extravagant terms. However, a lifetime of managing individual and group
+        conflict slowly, but effectively, chipped away at my overly mythical
+        sense-of-self. Any remaining certainties, that were not already beaten
+        down by humbling experience, were soon shattered by the way in which the
+        world changed in the new century, rendering much of my previous world
+        view irrelevant.
+      </p>
+
+      <p>
+        My posters are a way for me to play with ideas, words, pictures, and
+        typography- in an attempt to capture any moments of clarity that I am
+        fortunate have about our fast-churning world. To the extent possible, I
+        try to go past the usual polarizing issues (abortion, campaign-finance,
+        gerrymandering, racism, sexism, Trump, Putin, or Modi) in order to
+        reflect upon what I believe are the vital attributes of a thinking human
+        and a humane society. Needless to say, sometimes my biases and
+        frustrations come through.
+      </p>
+    </div>
+    <a class="button" href="/posters#posters">Shop Posters Here</a>
+  </div>
+</div>
+<div class="poster-layout" id="posters">
   <app-poster-items
     *ngFor="let poster of postres; index as i"
     [image]="poster.image"

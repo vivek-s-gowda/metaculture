@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
+      width: '60%',
       // data: ,
     });
 
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
         <input type="text" class="input" placeholder="Address" formControlName="address"/>
         <input type="text" class="input" placeholder="City" formControlName="city"  />
         <input type="text" class="input" placeholder="Zip Code" formControlName="zipcode"/>
+        <input type="text" class="input" placeholder="Amount" formControlName="amount"/>
         <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
           <ngx-stripe-payment [clientSecret]="clientSecret">
           </ngx-stripe-payment>
@@ -83,6 +84,7 @@ export class DialogOverviewExampleDialog implements OnInit{
     private _snackBar: MatSnackBar
   ) {}
 
+  @ViewChild(StripePaymentElementComponent)
   paymentElement!: StripePaymentElementComponent;
   elementsOptions: StripeElementsOptions = {
     locale: 'en',
@@ -103,7 +105,7 @@ export class DialogOverviewExampleDialog implements OnInit{
   
 ngOnInit(): void {
 
-  this.paymentElementForm.get('amount')?.setValue(1000);
+  this.paymentElementForm.get('amount')?.setValue(1000/100);
   this.createPaymentIntent(
     this.paymentElementForm.get('amount')?.value
   ).subscribe((pi: any) => {
@@ -151,6 +153,7 @@ ngOnInit(): void {
         } else {
           if (result.paymentIntent.status === 'succeeded') {
             this.openSnackBar('Order Placed Payment Successfull');
+            this.onNoClick();
             // alert('Order Placed Payment Successfull');
           }
         }
