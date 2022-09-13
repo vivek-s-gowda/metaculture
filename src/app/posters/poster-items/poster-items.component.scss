@@ -1,3 +1,12 @@
+
+@mixin  Libre-Bodoni {
+  font-family: 'Libre Bodoni', serif;
+}
+
+@mixin Inria-Serif {
+  font-family: 'Inria Serif', serif;
+}
+
 .poster-layout {
   display: flex;
   flex-direction: column;
@@ -21,7 +30,7 @@
       text-align: center;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-family: 'Libre Bodoni', serif;
+      @include Libre-Bodoni();
     }
     .btn-style {
       margin-left: 20px;

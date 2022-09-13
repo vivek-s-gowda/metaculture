@@ -1,3 +1,12 @@
+@mixin  Libre-Bodoni {
+    font-family: 'Libre Bodoni', serif;
+  }
+  
+  @mixin Inria-Serif {
+    font-family: 'Inria Serif', serif;
+  }
+
+  
 .items-layout {
     margin-top: 29px;
     display: flex;
@@ -15,10 +24,12 @@
             color: black;
             font-size: 19px;
             margin: 12.5px 0px;
+            @include Libre-Bodoni();
         }
         .desc {
             color: #333333;
             font-size: 16px;
+            @include Inria-Serif();
         }
         
         .cost-cart {

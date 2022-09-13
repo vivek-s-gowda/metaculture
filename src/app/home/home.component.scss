@@ -1,3 +1,27 @@
+@mixin Oranienbaum {
+  font-family: 'Oranienbaum', serif;
+}
+
+@mixin Noto-Serif-Display {
+  font-family: 'Noto Serif Display', serif;
+}
+
+@mixin Baskerville {
+  font-family: 'Libre Baskerville', serif;
+}
+
+@mixin  Libre-Bodoni {
+  font-family: 'Libre Bodoni', serif;
+}
+
+@mixin Inria-Serif {
+  font-family: 'Inria Serif', serif;
+}
+
+@mixin Cormorant-Garamond {
+  font-family: 'Cormorant Garamond', serif;
+}
+
 .about {
     display: flex;
     align-items: center;
@@ -13,21 +37,39 @@
       font-size: 25px;
       font-style: normal;
       font-weight: 300;
-      font-family: 'Yantramanav', sans-serif;
+      @include Libre-Bodoni();
     }
   
-    .paras {
-      font-size: 16px;
-      text-align: center;
-      font-weight: 300;
-      font-family: 'Yantramanav', sans-serif;
+    .contribute {
+      @include Inria-Serif();
     }
-    .paras-left {
-      font-size: 16px;
-      text-align: left;
-      margin-bottom: 15px;
-      font-family: 'Yantramanav', sans-serif;
+    .side-by-side {
+      display: flex;
+      .paras {
+        font-size: 16px;
+        text-align: center;
+        font-weight: 300;
+        @include Inria-Serif();
+        padding-left: 15px;
+        text-align: left;
+      }
+      .paras-left {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 15px;
+        @include Inria-Serif();
+        padding-left: 15px;
+        text-align: left;
+      }
     }
+
+
+// font-family: 'Cormorant Garamond', serif;
+// font-family: 'Inria Serif', serif;
+// font-family: 'Libre Baskerville', serif;
+// font-family: 'Libre Bodoni', serif;
+// font-family: 'Noto Serif Display', serif;
+// font-family: 'Oranienbaum', serif;
   
     .footer-box {
       height: 352px;
@@ -37,10 +79,12 @@
       padding: 5%;
       justify-content: space-around;
       align-items: center;
+      @include Libre-Bodoni();
   
       .contact {
         font-size: 50px;
         color: #fff;
+
       }
   
       .no-style {

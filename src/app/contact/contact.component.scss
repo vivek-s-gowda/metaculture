@@ -1,8 +1,18 @@
+@mixin  Libre-Bodoni {
+  font-family: 'Libre Bodoni', serif;
+}
+
+@mixin Inria-Serif {
+  font-family: 'Inria Serif', serif;
+}
+
+
 .contact-layout {
   display: flex;
   padding: 0px 110px;
   flex-direction: column;
   gap: 3em;
+  @include Libre-Bodoni();
   .footer-box {
     margin-top: 20px;
     height: 500px;
