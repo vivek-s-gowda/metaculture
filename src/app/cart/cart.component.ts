@@ -80,7 +80,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.updateList();
 
-    this.dataService.addData('orders', this.orders);
+    // this.dataService.addData('orders', this.orders);
     this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100);
     this.createPaymentIntent(
       this.paymentElementForm.get('amount')?.value
