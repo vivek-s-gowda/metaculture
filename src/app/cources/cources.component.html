@@ -1,10 +1,53 @@
+<div class="head-section">
+  <img src="assets/images/unnamed.png" />
+
+  <div class="text-area">
+    <!-- <div class="heading">
+    This poster exhibition is currently being held at Busboys and Poets (corner
+    of 14th and V Streets), Washington DC. It is open all week, during normal
+    business hours. It will be on display until January 2023.
+  </div> -->
+    <!-- <div class="tag">
+      Creating posters is for me cathartic and fun. It is not my vocation.
+    </div> -->
+    <div class="content">
+      <p>
+        The changes of the last 50 years have rendered the political and social
+        world far too complex for most of us to understand. I often call
+        democracy the broadest and most complex relationship you can never have.
+        Unlike academics and scholars whose understanding of these issues come
+        mostly from research and the deliberation of abstract ideas, most of my
+        insights were first triggered by excruciating first-hand experience. I
+        have been extraordinarily privileged to be able to help people
+        understand their own thinking processes, and to work with them when they
+        are at their most vulnerable. This has given me a deep appreciation of
+        what it takes for us humans to get along with each other (and
+        ourselves). Every functional relationship, I have come to realize, is a
+        miracle of love, patience, and compromise.
+      </p>
+
+      <p>
+        MetaCulture’s courses are committed to developing intelligent and
+        thoughtful citizens who can help sustain our extremely vulnerable
+        societies. A lifetime of working with groups and communities (to
+        strengthen their collaboration and conflict management processes) has
+        taught me that sustainable communities depend more on the culture and
+        character of their people than on technocrats with their clever attempts
+        at developing policies, legislation, or social engineering. These
+        courses are designed for those who are willing to question themselves,
+        their assumptions, and their solutions for all the ills of the world.
+      </p>
+    </div>
+    <!-- <a class="button" href="/posters#posters">Shop Posters Here</a> -->
+  </div>
+</div>
 <div>
   <app-course-items
     *ngFor="let item of courses; index as i"
     [image]="item.image"
     [heading]="item.heading"
     [description]="item.description"
-    [counter]="i+1"
+    [counter]="i + 1"
     [cost]="item.cost"
     [item]="item"
   ></app-course-items>
