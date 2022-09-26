@@ -82,7 +82,7 @@
       background-color: #b4b4b4;
       display: flex;
       padding: 5%;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       @include Libre-Bodoni();
   
@@ -93,6 +93,7 @@
         border: none;
         font-size: 50px;
         color: #fff;
+        padding: 0;
         
       }
       .contribute:hover {
