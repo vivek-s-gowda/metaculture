@@ -6,6 +6,13 @@
     font-family: 'Inria Serif', serif;
   }
 
+  .heading {
+    font-size: larger;
+    @include Libre-Bodoni();
+    margin-bottom: 15px;
+    padding: 0px 110px;
+    margin-top: 20px;
+}
   
 .head-section{
     display: flex;
@@ -16,23 +23,16 @@
     img{
         height: 300px;
         width: 350px;
-        margin-top: 40px;
+        margin-top: 0;
+        margin-right: 15px;
     }
     .text-area {
         display: flex;
-        flex-direction: column;
-        padding-left: 15px;
         padding-top: 5px;
-        .heading {
-            font-size: larger;
-            @include Libre-Bodoni();
-            margin-bottom: 15px;
-        }
+        
         .tag
         {
             @include Inria-Serif();
-            // font-size: small;
-
             margin-bottom: 15px;
         }
         .content {
