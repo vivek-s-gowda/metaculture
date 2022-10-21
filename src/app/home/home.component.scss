@@ -1,153 +1,326 @@
-@mixin Oranienbaum {
-  font-family: 'Oranienbaum', serif;
-}
+// @mixin Oranienbaum {
+//   font-family: 'Oranienbaum', serif;
+// }
 
-@mixin Noto-Serif-Display {
-  font-family: 'Noto Serif Display', serif;
-}
+// @mixin Noto-Serif-Display {
+//   font-family: 'Noto Serif Display', serif;
+// }
 
-@mixin Baskerville {
-  font-family: 'Libre Baskerville', serif;
-}
+// @mixin Baskerville {
+//   font-family: 'Libre Baskerville', serif;
+// }
 
-@mixin  Libre-Bodoni {
-  font-family: 'Libre Bodoni', serif;
-}
+// @mixin  Libre-Bodoni {
+//   font-family: 'Libre Bodoni', serif;
+// }
 
-@mixin Inria-Serif {
-  font-family: 'Inria Serif', serif;
-}
+// @mixin Inria-Serif {
+//   font-family: 'Inria Serif', serif;
+// }
 
-@mixin Cormorant-Garamond {
-  font-family: 'Cormorant Garamond', serif;
-}
+// @mixin Cormorant-Garamond {
+//   font-family: 'Cormorant Garamond', serif;
+// }
 
-.about {
+// .about {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     .rounded-image {
+//       height: 257px;
+//       width: 257px;
+//       border-radius: 100%;
+//     }
+//     .name-style {
+//       color: #0280ca;
+//       font-size: 25px;
+//       font-style: normal;
+//       font-weight: 300;
+//       @include Libre-Bodoni();
+//     }
+
+//     .contribute-text {
+//       color: #fff;
+//       @include Inria-Serif();
+//       display: flex;
+//       flex-direction: column;
+
+//       @include Libre-Bodoni();
+//       }
+//     .side-by-side {
+//       display: flex;
+//       .paras {
+//         font-size: 16px;
+//         text-align: center;
+//         font-weight: 300;
+//         @include Inria-Serif();
+//         padding-left: 15px;
+//         text-align: left;
+//       }
+//       .paras-left {
+//         font-size: 16px;
+//         text-align: left;
+//         margin-bottom: 15px;
+//         @include Inria-Serif();
+//         padding-left: 15px;
+//         text-align: left;
+//       }
+//     }
+
+// // font-family: 'Cormorant Garamond', serif;
+// // font-family: 'Inria Serif', serif;
+// // font-family: 'Libre Baskerville', serif;
+// // font-family: 'Libre Bodoni', serif;
+// // font-family: 'Noto Serif Display', serif;
+// // font-family: 'Oranienbaum', serif;
+
+//     .footer-box {
+//       height: 352px;
+//       width: 100%;
+//       background-color: #b4b4b4;
+//       display: flex;
+//       padding: 5%;
+//       justify-content: space-evenly;
+//       align-items: center;
+//       @include Libre-Bodoni();
+
+//       .contribute{
+//         background-color: transparent;
+//         border-radius: 3px;
+//         border: none;
+//         font-size: 50px;
+//         color: #fff;
+//         padding: 0;
+
+//       }
+//       .contribute:hover {
+//         border: 1px grey solid;
+//       }
+//     .contact-area {
+
+//       display: flex;
+//       flex-direction: column;
+//       height: 100%;
+//       justify-content: space-around;
+//       .contact {
+//         font-size: 50px;
+//         color: #fff;
+
+//       }
+
+//       .no-style {
+//         text-decoration: none;
+//         color: #fff;
+//         font-size: 15px;
+//       }
+//       .links {
+//         display: flex;
+//         flex-direction: column;
+//         .social-icons {
+//           display: flex;
+//           flex-direction: row;
+//           margin-top: 10px;
+//           .size {
+//             width: 36px;
+//             height: 36px;
+//           }
+//         }
+//       }
+//     }
+
+//     }
+
+//   }
+
+//   @media only screen and (max-width: 600px) {
+//     .footer-box {
+//       flex-direction: column;
+//     }
+//   }
+
+//   .input {
+//     margin-bottom: 15px;
+//     width: 100%;
+//     border: #d3d3d3 1px solid;
+//     border-radius: 3px;
+//     height: 40px;
+//   }
+
+.home-layout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .home-headline {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #30343f;
+    .line {
+      width: auto;
+      height: 18px;
+      margin-top: -25px;
+      background: rgba(182, 35, 44, 0.2);
+    }
+  }
+
+  .tag-line {
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    width: 700px;
+    margin-top: 40px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .bullets-container {
+    margin-top: 61px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    .rounded-image {
-      height: 257px;
-      width: 257px;
-      border-radius: 100%;
+    width: 800px;
+    img {
+      width: 223px;
+      height: 309px;
     }
-    .name-style {
-      color: #0280ca;
-      font-size: 25px;
+    .points {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      li {
+        margin-left: 41px;
+        // width: 430px;
+        list-style: none;
+        font-family: "Garamond";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 22px;
+        color: #000000;
+        margin-bottom: 55px;
+        svg {
+          margin-right: 12px;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .about-box {
+    height: 492px;
+    width: 100%;
+    margin-top: 104px;
+    background: rgba(229, 231, 230, 0.2);
+
+    .title {
+      margin-top: 74px;
+      font-family: "Gill Sans MT";
       font-style: normal;
-      font-weight: 300;
-      @include Libre-Bodoni();
-    }
-  
-    .contribute-text {
-      color: #fff;
-      @include Inria-Serif();
-      display: flex;
-      flex-direction: column;
-
-      @include Libre-Bodoni();
-      }
-    .side-by-side {
-      display: flex;
-      .paras {
-        font-size: 16px;
-        text-align: center;
-        font-weight: 300;
-        @include Inria-Serif();
-        padding-left: 15px;
-        text-align: left;
-      }
-      .paras-left {
-        font-size: 16px;
-        text-align: left;
-        margin-bottom: 15px;
-        @include Inria-Serif();
-        padding-left: 15px;
-        text-align: left;
-      }
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 37px;
+      text-align: center;
+      color: #30343f;
     }
 
-
-// font-family: 'Cormorant Garamond', serif;
-// font-family: 'Inria Serif', serif;
-// font-family: 'Libre Baskerville', serif;
-// font-family: 'Libre Bodoni', serif;
-// font-family: 'Noto Serif Display', serif;
-// font-family: 'Oranienbaum', serif;
-  
-    .footer-box {
-      height: 352px;
+    .image-description {
+      display: flex;
       width: 100%;
-      background-color: #b4b4b4;
-      display: flex;
-      padding: 5%;
       justify-content: space-evenly;
-      align-items: center;
-      @include Libre-Bodoni();
-  
+      margin-top: 91px;
+      span {
+        text-align: center;
+        .description {
+          margin-top: 47px;
+          display: block;
+          font-family: "Garamond";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 26px;
+          text-align: center;
+          width: 259px;
 
-      .contribute{
-        background-color: transparent;
-        border-radius: 3px;
-        border: none;
-        font-size: 50px;
-        color: #fff;
-        padding: 0;
-        
-      }
-      .contribute:hover {
-        border: 1px grey solid;
-      }
-    .contact-area {
-            
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: space-around;
-      .contact {
-        font-size: 50px;
-        color: #fff;
-
-      }
-
-  
-      .no-style {
-        text-decoration: none;
-        color: #fff;
-        font-size: 15px;
-      }
-      .links {
-        display: flex;
-        flex-direction: column;
-        .social-icons {
-          display: flex;
-          flex-direction: row;
-          margin-top: 10px;
-          .size {
-            width: 36px;
-            height: 36px;
+          .underline {
+            text-decoration-line: underline;
+            color: #b6232c;
           }
         }
       }
     }
+  }
 
+  .bio-box {
+    margin-top: 116px;
+    width: 1042px;
+    margin-bottom: 130px;
+    .image-txt {
+      display: flex;
+      img {
+        width: 381px;
+        height: 415px;
+      }
+      .texts {
+        margin-left: 65px;
+        .name {
+          font-family: "Gill Sans MT";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 32px;
+          line-height: 37px;
+          text-align: start;
+          color: #30343f;
+          margin-bottom: 38px;
+          .line {
+            width: 202px;
+            height: 18px;
+            margin-top: -20px;
+            background: rgba(182, 35, 44, 0.2);
+          }
+        }
+        .quote {
+          display: flex;
+          .para1 {
+            display: block;
+            font-family: "Garamond-italic";
+            font-style: italic;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: justify;
+            width: 530px;
+            color: #000000;
+            margin-left: 12px;
+          }
+        }
+        .para2 {
+          font-family: "Garamond-italic";
+          font-style: italic;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 26px;
+          text-align: justify;
+          color: #000000;
+          width: 600px;
+        }
+      }
     }
-
-
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .footer-box {
-      flex-direction: column;
+    .para3 {
+      font-family: "Garamond-italic";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: justify;
+      color: #000000;
     }
   }
-  
-
-  .input {
-    margin-bottom: 15px;
-    width: 100%;
-    border: #d3d3d3 1px solid;
-    border-radius: 3px;
-    height: 40px;
-  }
+}
