@@ -1,182 +1,68 @@
-@mixin  Libre-Bodoni {
-  font-family: 'Libre Bodoni', serif;
-}
-
-@mixin Inria-Serif {
-  font-family: 'Inria Serif', serif;
-}
-
-
 .contact-layout {
   display: flex;
-  padding: 0px 110px;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  gap: 3em;
-  @include Libre-Bodoni();
-  .footer-box {
-    margin-top: 20px;
-    height: 500px;
-    width: 100%;
-    background-color: #b4b4b4;
-    display: flex;
-    padding: 5%;
-    justify-content: space-around;
-    align-items: center;
+  .heading {
+    margin-top: 28px;
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 0px;
+    text-align: center;
+    color: #30343f;
+    border-bottom: 18px solid rgba(182, 35, 44, 0.2);
+  }
 
-    .contact {
-      font-size: 50px;
-      color: #fff;
-    }
-
-    .no-style {
-      text-decoration: none;
-      color: #fff;
-      font-size: 15px;
-    }
-    .links {
-      display: flex;
-      flex-direction: column;
-      .social-icons {
-        display: flex;
-        flex-direction: row;
-        margin-top: 10px;
-        .size {
-          width: 36px;
-          height: 36px;
-        }
-      }
+  .desc {
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: #000000;
+    margin-top: 40px;
+    a {
+      color: #b6232c;
     }
   }
 
   .form {
     display: flex;
+    margin-top: 52px;
     flex-direction: column;
-    .header {
-      margin-bottom: 10px;
-      font-size: 20px;
-      color: #333333;
-    }
-    label {
-      font-size: 16px;
-      color: #333333;
-      .red {
-        color: red;
-      }
-    }
-    .name {
-      display: flex;
-      width: 100%;
-      gap: 1em;
+    margin-bottom: 93px;
 
-      .field {
-        display: flex;
-        flex-direction: column;
-        input {
-          margin-top: 10px;
-          width: 350px;
-          height: 38px;
-          border: #333333 1px solid;
-          border-radius: 5px;
-        }
-
-        .short {
-          font-size: 13px;
-          color: #333333;
-        }
-      }
-    }
-    input {
-      margin-top: 10px;
-      width: 732px;
-      height: 38px;
-      border: #333333 1px solid;
+    .field {
+      width: 345px;
+      height: 41px;
+      background: #ffffff;
+      border: 1px solid #30343f;
       border-radius: 5px;
+      margin-right: 31px;
+      margin-bottom: 31px;
     }
-
     .text-area {
-      height: 120px;
+      height: 175px;
+      background: #ffffff;
+      border: 1px solid #30343f;
+      border-radius: 5px;
+      margin-bottom: 31px;
     }
-
-    .button-style {
-      width: 98px;
-      height: 42px;
-      border: #333333 1px solid;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .footer-box {
-    flex-direction: column;
-  }
-
-  .contact-layout {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 5px;
-    gap: 2em;
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-
-      .header {
-        margin-bottom: 10px;
-        font-size: 20px;
-        color: #333333;
-        width: 100%;
-      }
-      label {
-        font-size: 16px;
-        color: #333333;
-        .red {
-          color: red;
-        }
-      }
-      .name {
-        display: flex;
-        width: 100%;
-        gap: 1em;
-        flex-direction: column;
-
-        .field {
-          display: flex;
-          flex-direction: column;
-          input {
-            margin-top: 10px;
-            width: 350px;
-            height: 38px;
-            border: #333333 1px solid;
-            border-radius: 5px;
-            width: 100%;
-          }
-
-          .short {
-            font-size: 13px;
-            color: #333333;
-          }
-        }
-      }
-      input {
-        margin-top: 10px;
-        width: 732px;
-        height: 38px;
-        border: #333333 1px solid;
-        border-radius: 5px;
-        width: 100%;
-      }
-
-      .text-area {
-        height: 120px;
-      }
-
-      .button-style {
-        width: 98px;
-        height: 42px;
-        border: #333333 1px solid;
-      }
+    .btn-style {
+      width: 160px;
+      height: 41px;
+      background: #b6232c;
+      border-radius: 5px;
+      font-family: 'Gill Sans MT';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: #FFFFFF;
+      margin-top: 31px;
     }
   }
 }

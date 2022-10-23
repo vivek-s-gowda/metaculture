@@ -1,57 +1,129 @@
-<div class="cart-layout">
-  <div class="left-layout-container">
-    <div class="items" *ngFor="let item of items; index as i">
-      <img [src]="item.image" alt="" />
-      <div class="title">{{ item.heading }}</div>
-      <div class="cost">${{ item.cost }}</div>
-      <div class="delete" (click)="delete(i)">
+<div *ngIf="!isCheckout" class="cart-layout">
+  <div class="heading">My Cart</div>
+  <div class="side-by-side">
+    <div class="cart-items-area">
+      <div class="cart-items" *ngFor="let item of items; index as i">
+        <img [src]="item.image" alt="" />
+        <span class="descs">
+          <div class="title">{{ item.heading }}</div>
+          <div class="cost">${{ item.cost }}</div>
+          <span>
+            <span class="quantity">Quantity</span>
+            <span class="remove" (click)="delete(i)"> Remove </span></span
+          >
+          <input type="text" class="input-box" />
+        </span>
+      </div>
+    </div>
+    <div class="checkout-area">
+      <span style="margin-bottom: 19px; align-self: baseline">
+        <span class="shipping"> Shipping </span>
+        <span class="rate"> Flat rate $30 </span></span
+      >
+      <span style="margin-top: 19px; align-self: baseline"
+        ><span class="total">Estimated Total</span
+        ><span class="cost">${{ totalCost }}</span></span
+      >
+
+      <button class="btn checkout" (click)="checkout(true)">
         <svg
+          width="16"
+          height="19"
+          viewBox="0 0 16 19"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="30"
-          height="30"
-          viewBox="0 0 30 30"
-          style="fill: #000000"
         >
           <path
-            d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"
-          ></path>
+            d="M14.2857 8H13.4286V5.42857C13.4286 2.43571 10.9929 0 8 0C5.00714 0 2.57143 2.43571 2.57143 5.42857V8H1.71429C0.767857 8 0 8.76786 0 9.71429V16.5714C0 17.5179 0.767857 18.2857 1.71429 18.2857H14.2857C15.2321 18.2857 16 17.5179 16 16.5714V9.71429C16 8.76786 15.2321 8 14.2857 8ZM10.5714 8H5.42857V5.42857C5.42857 4.01071 6.58214 2.85714 8 2.85714C9.41786 2.85714 10.5714 4.01071 10.5714 5.42857V8Z"
+            fill="white"
+          />
         </svg>
-      </div>
-    </div>
+        Secure checkout
+      </button>
 
-    <div class="items">
-      <div class="delete"></div>
-      <!-- <img src="assets/images/icons/cart.png" class="small-icon" alt="" /> -->
-      <div class="title">Total</div>
-      <div class="cost">${{ totalCost }}</div>
-      <div class="delete"></div>
+      <div class="continue-shop">Continue shopping</div>
     </div>
   </div>
+</div>
 
-  <div class="right-layout-container">
-    <div class="form">
-      <div class="details">Personal Information for delivery</div>
+<div *ngIf="isCheckout" class="cart-layout">
+  <div class="heading">Checkout</div>
+  <div class="side-by-side">
+    <div class="cart-items-area">
+      <div class="form">
+        <div class="details">Billing address</div>
 
-
-      <div [formGroup]="paymentElementForm">
-        <input
-          type="text"
-          class="input"
-          placeholder="Name*"
-          formControlName="name"
-        />
-        <input type="text" class="input" placeholder="Email*" formControlName="email"/>
-        <input type="text" class="input" placeholder="Address" formControlName="address"/>
-        <input type="text" class="input" placeholder="City" formControlName="city"  />
-        <input type="text" class="input" placeholder="Zip Code" formControlName="zipcode"/>
-        <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
-          <ngx-stripe-payment [clientSecret]="clientSecret">
-          </ngx-stripe-payment>
-        </ng-container>
-        <button class="btn" (click)="pay()">PAY ${{totalCost}}</button>
+        <div [formGroup]="paymentElementForm">
+          <input
+            type="text"
+            class="input"
+            placeholder="Name*"
+            formControlName="name"
+          />
+          <input
+            type="text"
+            class="input"
+            placeholder="Email*"
+            formControlName="email"
+          />
+          <input
+            type="text"
+            class="input"
+            placeholder="Address"
+            formControlName="address"
+          />
+          <input
+            type="text"
+            class="input"
+            placeholder="City"
+            formControlName="city"
+          />
+          <input
+            type="text"
+            class="input"
+            placeholder="Zip Code"
+            formControlName="zipcode"
+          />
+          <div class="gap"></div>
+          <ng-container *ngIf="elementsOptions?.clientSecret as clientSecret">
+            <ngx-stripe-payment [clientSecret]="clientSecret">
+            </ngx-stripe-payment>
+          </ng-container>
+          <div class="gap"></div>
+        </div>
       </div>
+    </div>
+
+    <div class="checkout-area">
+      <span style="margin-bottom: 19px; align-self: baseline">
+        <span class="shipping text-center"> In Your Cart </span></span
+      >
+      <div class="cart-items" *ngFor="let item of items; index as i">
+        <img [src]="item.image" alt="" />
+        <span class="descs">
+          <div class="title">{{ item.heading }}</div>
+          <div class="cost-item">${{ item.cost }}</div>
+          <span>
+            <span class="quantity">Qty : </span>
+          </span>
+        </span>
+      </div>
+      <button class="btn checkout" (click)="pay()">
+        <svg
+          width="16"
+          height="19"
+          viewBox="0 0 16 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.2857 8H13.4286V5.42857C13.4286 2.43571 10.9929 0 8 0C5.00714 0 2.57143 2.43571 2.57143 5.42857V8H1.71429C0.767857 8 0 8.76786 0 9.71429V16.5714C0 17.5179 0.767857 18.2857 1.71429 18.2857H14.2857C15.2321 18.2857 16 17.5179 16 16.5714V9.71429C16 8.76786 15.2321 8 14.2857 8ZM10.5714 8H5.42857V5.42857C5.42857 4.01071 6.58214 2.85714 8 2.85714C9.41786 2.85714 10.5714 4.01071 10.5714 5.42857V8Z"
+            fill="white"
+          />
+        </svg>
+        Complete checkout
+      </button>
+      <div class="continue-shop" (click)="checkout(false)">Back to cart</div>
     </div>
   </div>
 </div>

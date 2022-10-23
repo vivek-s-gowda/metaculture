@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
 
   @ViewChild(StripePaymentElementComponent)
   paymentElement!: StripePaymentElementComponent;
+  isCheckout: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -166,5 +167,9 @@ export class CartComponent implements OnInit {
       verticalPosition: 'bottom',
       duration: 2 * 1000,
     });
+  }
+
+  checkout(state: boolean) {
+      this.isCheckout = state;
   }
 }

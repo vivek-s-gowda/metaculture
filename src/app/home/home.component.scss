@@ -157,15 +157,10 @@
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
-    line-height: 46px;
+    line-height: 0px;
     text-align: center;
     color: #30343f;
-    .line {
-      width: auto;
-      height: 18px;
-      margin-top: -25px;
-      background: rgba(182, 35, 44, 0.2);
-    }
+    border-bottom: 18px solid  rgba(182, 35, 44, 0.2);
   }
 
   .tag-line {
@@ -275,16 +270,12 @@
           font-style: normal;
           font-weight: 400;
           font-size: 32px;
-          line-height: 37px;
+          width:206px;
+          line-height: 0px;
           text-align: start;
           color: #30343f;
           margin-bottom: 38px;
-          .line {
-            width: 202px;
-            height: 18px;
-            margin-top: -20px;
-            background: rgba(182, 35, 44, 0.2);
-          }
+          border-bottom: 18px solid rgba(182, 35, 44, 0.2);
         }
         .quote {
           display: flex;
