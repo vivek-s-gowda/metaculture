@@ -1,41 +1,56 @@
-
-@mixin  Libre-Bodoni {
-  font-family: 'Libre Bodoni', serif;
-}
-
-@mixin Inria-Serif {
-  font-family: 'Inria Serif', serif;
-}
-
 .poster-layout {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  div {
-    height: auto;
-    width: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    img {
-      height: 523px;
-      width: 380px;
-      pointer-events: none;
-    }
-    .title {
-      color: #999999;
-      font-size: 16px;
-      margin-top: 12px;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      @include Libre-Bodoni();
-    }
-    .btn-style {
-      margin-left: 20px;
-      color: aliceblue;
-      background-color: #219232;
-    }
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 130px;
+  img {
+    width: 308px;
+    height: 421px;
+  }
+  .title {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #30343f;
+    margin-top: 17px;
+    width: 308px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .size {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #868686;
+    margin-top: 8px;
+  }
+  .cost {
+    text-align: center;
+    margin-top: 17px;
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #30343f;
+  }
+  .btn-style {
+    background: #b6232c;
+    border-radius: 5px;
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #ffffff;
+    margin-left: 20px;
   }
 }

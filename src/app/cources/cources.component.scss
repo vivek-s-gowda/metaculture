@@ -1,54 +1,76 @@
-@mixin  Libre-Bodoni {
-    font-family: 'Libre Bodoni', serif;
-  }
-  
-  @mixin Inria-Serif {
-    font-family: 'Inria Serif', serif;
-  }
+.courses-layout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .heading {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #30343f;
+    width: 1063px;
 
-  
-.head-section{
+    .line {
+      width: 763px;
+      height: 18px;
+      left: 444px;
+      top: 407px;
+      background: rgba(182, 35, 44, 0.2);
+      position: absolute;
+    }
+  }
+  .description {
+    width: 736px;
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: justify;
+    color: #000000;
+    margin-top: 48px;
+  }
+  .description-plus-image {
     display: flex;
-    padding: 0px 110px;
-    padding-top: 15px;
-    align-items: center;
-    margin-bottom: 70px;
-    img{
-        height: 300px;
-        width: 350px;
+    width: 736px;
+    margin-top: 78px;
+    margin-bottom: 109px;
+    img {
+      width: 305px;
+      height: 305px;
     }
-    .text-area {
-        display: flex;
-        flex-direction: column;
-        padding-left: 30px;
-        padding-top: 5px;
-        .heading {
-            font-size: larger;
-            @include Libre-Bodoni();
-            margin-bottom: 15px;
-        }
-        .tag
-        {
-            @include Inria-Serif();
-            font-size: small;
-
-            margin-bottom: 15px;
-        }
-        .content {
-            @include Inria-Serif();
-        }
-        .button {
-            border-radius: 100px;
-            background-color: #abb7c2ad;
-            font-size: 18px;
-            width: 207px;
-            height: 55px;
-            color: #000000;
-            padding: 14px 25px;
-            text-decoration: none;
-            cursor: pointer;;
-
-        }
+    .img-description {
+      .italic-lines {
+        font-family: "Garamond-italic";
+      }
+      font-family: "Garamond";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: justify;
+      color: #000000;
+      margin-left: 31px;
     }
-
+  }
+}
+.courses {
+  background: rgba(229, 231, 230, 0.2);
+  padding-top: 61px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .courses-title {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #30343f;
+    margin-bottom: 136px;
+  }
 }

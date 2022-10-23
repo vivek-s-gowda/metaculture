@@ -1,75 +1,98 @@
-@mixin  Libre-Bodoni {
-    font-family: 'Libre Bodoni', serif;
+.poster-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .event-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    background: #b6232c;
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: #ffffff;
+    padding-left: 250px;
+    padding-right: 250px;
+    margin-top: -48px;
+    margin-bottom: 83px;
   }
-  
-  @mixin Inria-Serif {
-    font-family: 'Inria Serif', serif;
+  .heading {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    width: 750px;
+    .line {
+      position: absolute;
+      width: 287px;
+      height: 18px;
+      left: 790px;
+      top: 485px;
+      background: rgba(182, 35, 44, 0.2);
+    }
   }
+
+  .description {
+    width: 736px;
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: justify;
+    color: #000000;
+    margin-top: 48px;
+  }
+
+  .description-plus-img {
+    margin-top: 37px;
+    display: flex;
+    width: 736px;
+    margin-bottom: 113px;
+    img {
+      width: 305px;
+      height: 305px;
+    }
+    .image-desc {
+      font-family: "Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: justify;
+      color: #000000;
+      margin-left: 31px;
+    }
+  }
+}
+
+.posters-area {
+  background: rgba(229, 231, 230, 0.2);
+  padding-top: 76px;
+  display: flex;
+  flex-direction: column;
 
   .heading {
-    font-size: larger;
-    @include Libre-Bodoni();
-    margin-bottom: 15px;
-    padding: 0px 110px;
-    margin-top: 20px;
-}
-  
-.head-section{
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #30343f;
+    margin-bottom: 83px;
+  }
+  .posters {
     display: flex;
-    padding: 0px 110px;
-    padding-top: 15px;
+    gap: 1;
+    flex-wrap: wrap;  justify-content: center;
     align-items: center;
-    margin-bottom: 70px;
-    img{
-        height: 300px;
-        width: 350px;
-        margin-top: 0;
-        margin-right: 15px;
-    }
-    .text-area {
-        display: flex;
-        padding-top: 5px;
-        
-        .tag
-        {
-            @include Inria-Serif();
-            margin-bottom: 15px;
-        }
-        .content {
-            @include Inria-Serif();
-        }
-        .button {
-            border-radius: 100px;
-            background-color: #abb7c2ad;
-            font-size: 18px;
-            width: 207px;
-            height: 55px;
-            color: #000000;
-            padding: 14px 25px;
-            text-decoration: none;
-            cursor: pointer;;
-
-        }
-    }
-
-}
-.poster-layout {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 110px;
-    gap: 2em;
-
-}
-
-
-@media only screen and (max-width: 600px) { 
-    .poster-layout {
-        margin-top: 30px;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0px 5px;
-        gap: 2em;
-    }
-    
+  }
 }
