@@ -17,7 +17,7 @@ export class PostersComponent implements OnInit {
     },
     {
       image: 'assets/images/poster1/poster2.jpg',
-      heading: 'breakfast of sapiens',
+      heading: 'Breakfast of sapiens',
       cost: '150',
     },
     {

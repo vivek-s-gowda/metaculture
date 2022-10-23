@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
     city: [''],
     amount: [2500, [Validators.required, Validators.pattern(/d+/)]],
     items: [''],
-    date:['']
+    date: [''],
   });
 
   elementsOptions: StripeElementsOptions = {
@@ -76,20 +76,20 @@ export class CartComponent implements OnInit {
   };
 
   paying = false;
-  orders: any = [{name:'test'}];
+  orders: any = [];
 
   ngOnInit(): void {
     this.updateList();
-
+    // this.item
     // this.dataService.addData('orders', this.orders);
-    this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100);
+    this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100 + 3000);
     this.createPaymentIntent(
       this.paymentElementForm.get('amount')?.value
     ).subscribe((pi: any) => {
       this.elementsOptions.clientSecret = pi.clientSecret as string;
       this.dataService.getData().subscribe((values: any) => {
-        console.log(values)
-        // this.orders = values.orders;
+        console.log(values);
+        this.orders = values[2];
       });
     });
   }
@@ -133,13 +133,15 @@ export class CartComponent implements OnInit {
       })
       .subscribe((result: any) => {
         this.paying = false;
+        let amountPlusShippingCost = 0;
+        amountPlusShippingCost = this.paymentElementForm.get('amount')?.value! + 3000
         this.createPaymentIntent(
-          this.paymentElementForm.get('amount')?.value
+          amountPlusShippingCost
         ).subscribe((pi) => {
           this.elementsOptions.clientSecret = pi.client_secret as string;
         });
         if (result.error) {
-          this.openSnackBar('Error '+result.error.message);
+          this.openSnackBar('Error ' + result.error.message);
           // alert({ success: false, error: result.error.message });
         } else {
           if (result.paymentIntent.status === 'succeeded') {
@@ -170,6 +172,28 @@ export class CartComponent implements OnInit {
   }
 
   checkout(state: boolean) {
-      this.isCheckout = state;
+    this.isCheckout = state;
+  }
+
+  updateValue(index: number) {
+    if (parseInt(this.items[index].qty) >= 1) {
+      if (this.items[index].type === 'COURSE')
+        this.items[index].cost = 250 * parseInt(this.items[index].qty);
+      else this.items[index].cost = 150 * parseInt(this.items[index].qty);
+    } else if (
+      parseInt(this.items[index].qty) < 1 ||
+      this.items[index].qty === '' ||
+      this.items[index].qty === null
+    ) {
+      this.items[index].qty = 1;
+      if (this.items[index].type === 'COURSE')
+        this.items[index].cost = 250 * parseInt(this.items[index].qty);
+      else this.items[index].cost = 150 * parseInt(this.items[index].qty);
+    }
+    let sum = 0;
+    this.items.forEach((values: any) => {
+      sum = sum + parseInt(values.cost);
+    });
+    this.totalCost = sum;
   }
 }

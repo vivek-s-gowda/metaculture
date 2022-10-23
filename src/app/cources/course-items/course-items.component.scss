@@ -1,7 +1,7 @@
 .items-layout {
   display: flex;
   width: 1013px;
-  margin-bottom: 172px;
+  margin-bottom: 50px;
   img {
     width: 284px;
     height: 285px;
@@ -46,6 +46,11 @@
       line-height: 26px;
       text-align: justify;
       color: #000000;
+    }
+    .starts {
+      margin-left: 12px;
+      font-size: 22px;
+      color: #b6232c;
     }
   }
 }

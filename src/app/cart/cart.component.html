@@ -8,10 +8,10 @@
           <div class="title">{{ item.heading }}</div>
           <div class="cost">${{ item.cost }}</div>
           <span>
-            <span class="quantity">Quantity</span>
+            <!-- <span class="quantity">Quantity</span> -->
             <span class="remove" (click)="delete(i)"> Remove </span></span
           >
-          <input type="text" class="input-box" />
+          <!-- <input type="number" [(ngModel)]="item.qty" (ngModelChange)="updateValue(i)" class="input-box" /> -->
         </span>
       </div>
     </div>
@@ -104,7 +104,7 @@
           <div class="title">{{ item.heading }}</div>
           <div class="cost-item">${{ item.cost }}</div>
           <span>
-            <span class="quantity">Qty : </span>
+            <!-- <span class="quantity">Qty : {{ item.qty }}</span> -->
           </span>
         </span>
       </div>

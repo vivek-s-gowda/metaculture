@@ -19,6 +19,7 @@ export class CourcesComponent implements OnInit {
       if we hope to heal our severely traumatized society and democracy? What might all of us lose if we
       allow our, admittedly, corrupted democracy to fail- because it is not good enough?`,
       cost: '250',
+      startsFrom : 'TBD'
     },
     {
       image: 'assets/images/course2.png',
@@ -30,6 +31,7 @@ export class CourcesComponent implements OnInit {
       what can you do to radically improve them? How do you build healthy relationships in an
       individualistic and increasingly mobile and fragmented world.`,
       cost: '250',
+      startsFrom: 'TBD'
     },
     {
       image: 'assets/images/course3.png',
@@ -42,6 +44,7 @@ export class CourcesComponent implements OnInit {
       liberal democracies globally, and in the USA, affect the idea of pluralistic coexistence in other parts of
       the world?`,
       cost: '250',
+      startsFrom: 'TBD'
     },
     {
       image: 'assets/images/course4.png',
@@ -53,6 +56,7 @@ export class CourcesComponent implements OnInit {
       more effective as citizens of a democracy? How do we equip ourselves to understand the world when
       politicians, activists, technology, and media are manipulating our emotions and pushing falsehoods?`,
       cost: '250',
+      startsFrom: 'TBD'
     },
     {
       image: 'assets/images/course5.png',
@@ -66,6 +70,7 @@ export class CourcesComponent implements OnInit {
       helps correct erroneous beliefs and logical fallacies that make us part of the problem- while helping
       establish realistic expectations for what our democracies can be.`,
       cost: '250',
+      startsFrom : 'Starting: Saturday, February 4th, 2023'
     },
   ];
 
