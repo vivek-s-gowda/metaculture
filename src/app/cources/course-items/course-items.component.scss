@@ -29,12 +29,12 @@
       .btn-style {
         background: #b6232c;
         border-radius: 5px;
-        font-family: 'Gill Sans MT';
+        font-family: "Gill Sans MT";
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
         line-height: 23px;
-        color: #FFFFFF;
+        color: #ffffff;
         margin-left: 21px;
       }
     }
@@ -51,6 +51,69 @@
       margin-left: 12px;
       font-size: 22px;
       color: #b6232c;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .items-layout {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 0px 36px;
+    flex-wrap: wrap;
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 22px;
+    }
+    .details {
+      margin-left: unset;
+      .header {
+        font-family: "Gill Sans MT";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 37px;
+        color: #30343f;
+      }
+      .cost-cart {
+        font-family: "Gill Sans MT";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37px;
+        color: #30343f;
+        margin-top: 17px;
+        display: flex;
+        margin-bottom: 21px;
+        flex-direction: column;
+        .btn-style {
+          background: #b6232c;
+          border-radius: 5px;
+          font-family: "Gill Sans MT";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 23px;
+          color: #ffffff;
+          margin-left: unset;
+        }
+      }
+      .desc {
+        font-family: "Garamond";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: justify;
+        color: #000000;
+      }
+      .starts {
+        margin-left: 12px;
+        font-size: 22px;
+        color: #b6232c;
+      }
     }
   }
 }

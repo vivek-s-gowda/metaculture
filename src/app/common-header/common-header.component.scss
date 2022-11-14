@@ -3,6 +3,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .hamburger {
+    display: none;
+  }
+
   .padd-image {
     padding: 60px 0px;
     padding-bottom: 58px;
@@ -35,7 +39,7 @@
       font-weight: 700;
       font-size: 20px;
       line-height: 23px;
-      color: #30343F;
+      color: #30343f;
       margin-right: 64px;
       cursor: pointer;
     }
@@ -78,11 +82,112 @@
     }
   }
 }
+.mobile-menu {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
   .head-layout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: unset;
+    .hamburger {
+      display: block;
+    }
+    .padd-image {
+      padding: 60px 0px;
+      padding-bottom: 58px;
+      .header-image {
+        width: 320px;
+        height: 109px;
+      }
+    }
+
     .header-style {
-      padding-left: 10px;
+      padding-bottom: 41px;
+      border-bottom: 1px solid #e5e7e6;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+      display: none;
+      .buttons-active {
+        font-family: "Gill Sans MT";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: #b6232c;
+        margin-right: 64px;
+        cursor: pointer;
+      }
+      .buttons {
+        font-family: "Gill Sans MT";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: #30343f;
+        margin-right: 64px;
+        cursor: pointer;
+      }
+      .cart-count {
+        //   background-color: #ff9900;
+        color: #ff9900;
+        height: auto;
+        width: auto;
+        padding: 1px;
+        text-align: center;
+        border-radius: 50%;
+      }
+      .space-justify {
+        display: flex;
+        // justify-content: space-between;
+        .cart-gaurd {
+          display: flex;
+          img {
+            height: 30px;
+            width: 30px;
+            transition: 300ms;
+            cursor: pointer;
+          }
+
+          img:hover {
+            transition: 300ms;
+            height: 35px;
+            width: 35px;
+          }
+          .cart-count {
+            //   background-color: #ff9900;
+            color: #ff9900;
+            height: auto;
+            width: auto;
+            padding: 1px;
+            text-align: center;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .mobile-menu {
+    display: flex;
+    transition: 5ms;
+    height: auto;
+    width: 100%;
+    background-color: #e5e7e6;
+    margin-bottom: 36px;
+    flex-direction: column;
+    span {
+      text-align: center;
+      margin: 10px 0px;
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      color: #30343f;
     }
   }
 }

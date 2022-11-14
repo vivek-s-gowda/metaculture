@@ -64,4 +64,79 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .footer {
+    width: 100%;
+    height: auto;
+    background: #30343f;
+    padding-top: 98px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    .items {
+      text-align: center;
+      margin-bottom: 70px;
+      .title {
+        font-family: "Gill Sans MT";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 37px;
+        color: #ffffff;
+        margin-bottom: 17px;
+      }
+      .description {
+        font-family: "Garamond";
+        font-style: normal;
+        font-size: 20px;
+        line-height: 26px;
+        color: #ffffff;
+        width: 306px;
+        .link {
+          color: #ffffff;
+        }
+        .email {
+          text-decoration: none;
+          color: #ffffff;
+        }
+        .icons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          a {
+            margin-top: 13px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  .tags {
+    width: 100%;
+    height: auto;
+    background: #b6232c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 12px;
+
+    .text {
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #ffffff;
+      span{
+        a {
+          text-decoration: none;
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
 }

@@ -11,6 +11,7 @@ import { CartService } from '../cart.service';
 export class CommonHeaderComponent implements OnInit {
   cartCount: number = 0;
   path: string = '/';
+  menuOpen: boolean = false;
   constructor(private cartService: CartService, private router: Router) {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -24,4 +25,6 @@ export class CommonHeaderComponent implements OnInit {
       this.cartCount = value;
     });
   }
+
+  // openMenu(): void {}
 }

@@ -66,3 +66,77 @@
     }
   }
 }
+
+
+
+@media only screen and (max-width: 600px) { 
+  .contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .heading {
+      margin-top: 28px;
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 0px;
+      text-align: center;
+      color: #30343f;
+      border-bottom: 18px solid rgba(182, 35, 44, 0.2);
+    }
+  
+    .desc {
+      font-family: "Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
+      color: #000000;
+      margin-top: 40px;
+      a {
+        color: #b6232c;
+      }
+    }
+  
+    .form {
+      display: flex;
+      margin-top: 52px;
+      flex-direction: column;
+      margin-bottom: 93px;
+      padding: 0px 36px;
+  
+      .field {
+        width: 100%;
+        height: 41px;
+        background: #ffffff;
+        border: 1px solid #30343f;
+        border-radius: 5px;
+        margin-right: 31px;
+        margin-bottom: 31px;
+      }
+      .text-area {
+        height: 175px;
+        background: #ffffff;
+        border: 1px solid #30343f;
+        border-radius: 5px;
+        margin-bottom: 31px;
+      }
+      .btn-style {
+        width: 160px;
+        height: 41px;
+        background: #b6232c;
+        border-radius: 5px;
+        font-family: 'Gill Sans MT';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin-top: 31px;
+      }
+    }
+  }
+}

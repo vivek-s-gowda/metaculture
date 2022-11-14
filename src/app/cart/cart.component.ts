@@ -82,7 +82,7 @@ export class CartComponent implements OnInit {
     this.updateList();
     // this.item
     // this.dataService.addData('orders', this.orders);
-    this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100 + 3000);
+    this.paymentElementForm.get('amount')?.setValue(this.totalCost * 100);
     this.createPaymentIntent(
       this.paymentElementForm.get('amount')?.value
     ).subscribe((pi: any) => {
@@ -106,7 +106,7 @@ export class CartComponent implements OnInit {
   }
 
   getTotalCost() {
-    this.totalCost = this.cartService.getTotalCost();
+    this.totalCost = this.cartService.getTotalCost() + 30;
   }
 
   pay() {

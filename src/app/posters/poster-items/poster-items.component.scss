@@ -54,3 +54,64 @@
     margin-left: 20px;
   }
 }
+
+
+
+@media only screen and (max-width: 600px) { 
+  .poster-layout {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    img {
+      width: 308px;
+      height: 421px;
+    }
+    .title {
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #30343f;
+      margin-top: 17px;
+      width: 308px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .size {
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #868686;
+      margin-top: 8px;
+    }
+    .cost {
+      text-align: center;
+      margin-top: 17px;
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      color: #30343f;
+    }
+    .btn-style {
+      background: #b6232c;
+      border-radius: 5px;
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: #ffffff;
+      margin-left: 20px;
+    }
+  }
+}

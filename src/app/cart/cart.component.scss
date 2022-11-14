@@ -98,7 +98,7 @@
           color: #30343f;
         }
         .input {
-          width: 493PX;
+          width: 493px;
           height: 41px;
           margin-top: 34px;
           background: #ffffff;
@@ -236,6 +236,257 @@
           background: #ffffff;
           border: 1px solid #30343f;
           border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cart-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 36px;
+    .heading {
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 0px;
+      text-align: center;
+      color: #30343f;
+      border-bottom: 18px solid rgba(182, 35, 44, 0.2);
+      margin-bottom: 107px;
+    }
+    .side-by-side {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .cart-items-area {
+        width: 100%;
+        .cart-items {
+          display: flex;
+          width: 100%;
+          height: auto;
+          margin-bottom: 30px;
+          flex-direction: column;
+          img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 22px;
+          }
+          .descs {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .title {
+              font-family: "Gill Sans MT";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 23px;
+              color: #30343f;
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin-left: 31px;
+            }
+            .cost {
+              font-family: "Gill Sans MT";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 23px;
+              color: #868686;
+              margin-left: 31px;
+              margin-top: 6px;
+            }
+            .remove {
+              font-family: "Garamond";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 26px;
+              color: #000000;
+              margin-left: 31px;
+              cursor: pointer;
+            }
+            .quantity {
+              font-family: "Garamond";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 26px;
+              color: #000000;
+              margin-left: 31px;
+              margin-top: 25px;
+            }
+            .input-box {
+              width: 177px;
+              height: 41px;
+              background: #ffffff;
+              border: 1px solid #30343f;
+              border-radius: 5px;
+              margin-left: 31px;
+              margin-top: 11px;
+            }
+          }
+        }
+
+        .form {
+          .details {
+            font-family: "Gill Sans MT";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 37px;
+            color: #30343f;
+          }
+          .input {
+            width: 100%;
+            height: 41px;
+            margin-top: 34px;
+            background: #ffffff;
+            border: 1px solid #30343f;
+            border-radius: 5px;
+          }
+          .gap {
+            height: 31px;
+            width: 100%;
+          }
+        }
+      }
+
+      .checkout-area {
+        width: 100%;
+        height: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 49px;
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 62px;
+        .shipping {
+          font-family: "Garamond";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 22px;
+          color: #30343f;
+          margin-bottom: 19px;
+          align-items: flex-start;
+        }
+        .rate {
+          font-family: "Garamond";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 22px;
+          margin-left: 130px;
+          color: #30343f;
+          margin-bottom: 19px;
+          align-items: flex-end;
+        }
+        .total {
+          font-family: "Garamond";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 22px;
+          color: #30343f;
+          align-items: flex-start;
+        }
+        .cost {
+          margin-top: 19px;
+          font-family: "Garamond";
+          font-style: bold;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 22px;
+          margin-left: 100px;
+          color: #30343f;
+        }
+
+        .checkout {
+          width: 100%;
+          height: 41px;
+          background: #b6232c;
+          border-radius: 5px;
+          font-family: "Gill Sans MT";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 23px;
+          color: #ffffff;
+          margin-top: 41px;
+        }
+
+        .continue-shop {
+          font-family: "Gill Sans MT";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 23px;
+          margin-top: 23px;
+          color: #b6232c;
+        }
+
+        .cart-items {
+          display: flex;
+          width: auto;
+          padding-left: 53px;
+          padding-right: 53px;
+          margin-bottom: 19px;
+          img {
+            width: 127px;
+            height: 127px;
+          }
+          .title {
+            font-family: "Gill Sans MT";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            width: auto;
+            margin-left: 18px;
+            color: #30343f;
+          }
+          .cost-item {
+            font-family: "Gill Sans MT";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            margin-left: 18px;
+            color: #868686;
+          }
+          .quantity {
+            font-family: "Garamond";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            margin-left: 18px;
+            color: #000000;
+          }
+          .input-box {
+            width: auto;
+            height: 41px;
+
+            background: #ffffff;
+            border: 1px solid #30343f;
+            border-radius: 5px;
+          }
         }
       }
     }

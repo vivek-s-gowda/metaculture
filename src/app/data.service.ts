@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class DataService {
   user!: AngularFireList<any>;
 
   constructor(
-    private fireBase: AngularFireDatabase,) {
+    private fireBase: AngularFireDatabase, private httpClient: HttpClient) {
     if(localStorage.getItem('cartitems'))
       this.cartItems = JSON.parse(localStorage.getItem('cartitems') as string);
 
@@ -62,5 +63,10 @@ export class DataService {
 
   updateCartCount() {
     this.getCartCount.next(this.cartItems.length);
+  }
+
+  getCopyrights()
+  {
+    return this.httpClient.get("https://pinaakaapis.onrender.com/getCopyrights")
   }
 }
