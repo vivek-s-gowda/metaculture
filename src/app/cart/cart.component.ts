@@ -158,7 +158,7 @@ export class CartComponent implements OnInit {
 
   createPaymentIntent(amount: any): Observable<PaymentIntent> {
     return this.http.post<PaymentIntent>(
-      `${'https://metaculture-payment-service.herokuapp.com'}/create-payment-intent`,
+      `${'https://metaculture-server.onrender.com'}/create-payment-intent`,
       { amount }
     );
   }
