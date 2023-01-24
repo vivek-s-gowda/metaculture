@@ -17,6 +17,10 @@ export class PosterItemsComponent implements OnInit {
   @Input() image: string = '';
   @Input() cost: string = '';
   @Input() item: any = {};
+  posterSize = ['18" X 24"', '24" X 36"'];
+  selectedSize = '18" X 24"';
+  selectedType = 'Semi-gloss';
+  posterTypes = ['Semi-gloss','Premium matte','Premium gloss','Mounted']
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   
@@ -38,6 +42,55 @@ export class PosterItemsComponent implements OnInit {
       verticalPosition: this.verticalPosition,
       duration: 2 * 1000,
     });
+  }
+
+  onTypeSizeChange() {
+    if(this.selectedSize == '18" X 24"')
+    {
+      switch(this.selectedType){
+        case 'Semi-gloss': {
+          this.cost = '40';
+          break;
+        }
+        case 'Premium matte': {
+          this.cost = '60';
+          break;
+        }
+        case 'Premium gloss': {
+          this.cost = '60';
+          break;
+        }
+        case 'Mounted': {
+          this.cost = '80';
+          break;
+        }
+      }
+    }
+    else {
+      switch(this.selectedType){
+        case 'Semi-gloss': {
+          this.cost = '60';
+          break;
+        }
+        case 'Premium matte': {
+          this.cost = '80';
+          break;
+        }
+        case 'Premium gloss': {
+          this.cost = '80';
+          break;
+        }
+        case 'Mounted': {
+          this.cost = '100';
+          break;
+        }
+      }
+    }
+  }
+
+  getCost() {
+    this.item.cost = this.cost;
+    return this.cost;
   }
 
 }

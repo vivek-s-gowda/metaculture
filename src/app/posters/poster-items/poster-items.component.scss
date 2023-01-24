@@ -23,6 +23,21 @@
     overflow: hidden;
   }
   .size {
+    select {
+      border: none;    
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+      color: #868686;
+      margin-top: 8px;
+      background-color: transparent;
+    }
+    select:focus {
+      outline: none;
+    }
     font-family: "Gill Sans MT";
     font-style: normal;
     font-weight: 400;

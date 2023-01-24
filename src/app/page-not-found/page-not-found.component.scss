@@ -1,17 +1,196 @@
-.page-not-found {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 15%;
-    flex-direction: column;
+.blog-layout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .blog-header {
+    font-family: "Gill Sans MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-align: center;
+    color: #30343f;
+    width: 735px;
+    .underline {
+      //   border-bottom: 18px solid rgba(182, 35, 44, 0.2);
+    }
+  }
+  .blog-content {
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: justify;
+    color: #000000;
+    width: 735px;
+  }
 
-    img {
-        margin-top: -200px;
-        margin-bottom: 40px;
-        width: 50%;
-        height: 50%;
+  li {
+    float: left;
+    list-style: none;
+    font-family: "Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    width: 735px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 94px;
+  }
+  .content-area {
+    padding-top: 115px;
+    padding-bottom: 115px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(229, 231, 230, 0.2);
+
+    .item {
+      display: flex;
+      width: 735px;
+      .image {
+        width: 184px;
+        height: 177px;
+        background: #d9d9d9;
+      }
+      .text-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        .title {
+          font-family: "Gill Sans MT";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 32px;
+          color: #30343f;
+        }
+        .desc {
+          font-family: "Garamond";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          text-align: justify;
+          color: #000000;
+        }
+        .download {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          margin-top: 20px;
+          width: 233px;
+          height: 41px;
+          background: #b6232c;
+          border-radius: 5px;
+          border: none;
+          color: #d9d9d9;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    .blog-header {
+      font-family: "Gill Sans MT";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 46px;
+      text-align: center;
+      color: #30343f;
+      width: 100%;
+      .underline {
+        //   border-bottom: 18px solid rgba(182, 35, 44, 0.2);
+      }
+    }
+    .blog-content {
+      font-family: "Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      text-align: justify;
+      color: #000000;
+      width: 100%;
     }
 
+    li {
+      float: left;
+      list-style: none;
+      font-family: "Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      width: 100%;
+      text-align: justify;
+      color: #000000;
+      margin-bottom: 94px;
+    }
+    .content-area {
+      padding-top: 115px;
+      padding-bottom: 115px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background: rgba(229, 231, 230, 0.2);
+
+      .item {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .image {
+          width: 184px;
+          height: 177px;
+          background: #d9d9d9;
+        }
+        .text-section {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+          .title {
+            font-family: "Gill Sans MT";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            color: #30343f;
+          }
+          .desc {
+            font-family: "Garamond";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: justify;
+            color: #000000;
+          }
+          .download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin-top: 20px;
+            width: 233px;
+            height: 41px;
+            background: #b6232c;
+            border-radius: 5px;
+            border: none;
+            color: #d9d9d9;
+          }
+        }
+      }
+    }
+  }
 }

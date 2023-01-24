@@ -1,9 +1,18 @@
 <div class="poster-layout">
   <img [src]="image" onContextMenu="return false;" onDrag="return false;" />
   <span class="title">{{ shortline }} </span>
-  <div class="size">20 in x 30 in</div>
+  <div class="size">
+    <select [(ngModel)]="selectedSize" (change)="onTypeSizeChange()">
+      <option class="size" *ngFor="let size of posterSize">{{size}}</option>
+    </select>
+  </div>
+  <div class="size">
+    <select [(ngModel)]="selectedType" (change)="onTypeSizeChange()">
+      <option class="size" *ngFor="let types of posterTypes">{{types}}</option>
+    </select>
+  </div>
   <span class="cost">
-    $ {{ cost }}
+    $ {{ getCost() }}
 
     <button class="btn btn-style" (click)="addToCart(item)">
       <svg
