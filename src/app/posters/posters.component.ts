@@ -51,11 +51,6 @@ export class PostersComponent implements OnInit {
       cost: '40',
     },
     {
-      image: 'assets/images/poster1/poster9.jpg',
-      heading: 'Crazy Governing Ourselves',
-      cost: '40',
-    },
-    {
       image: 'assets/images/poster1/poster10.jpg',
       heading: 'Democracy Dies As Spectacle',
       cost: '40',
@@ -116,11 +111,6 @@ export class PostersComponent implements OnInit {
       cost: '40',
     },
     {
-      image: 'assets/images/poster1/poster22.jpg',
-      heading: 'Justice or Revenge',
-      cost: '40',
-    },
-    {
       image: 'assets/images/poster1/poster23.jpg',
       heading: 'Move fast, break things',
       cost: '40',
@@ -136,11 +126,6 @@ export class PostersComponent implements OnInit {
       cost: '40',
     },
     {
-      image: 'assets/images/poster1/poster26.jpg',
-      heading: 'Politics of Suffering',
-      cost: '40',
-    },
-    {
       image: 'assets/images/poster1/poster27.jpg',
       heading: 'Porches and Portals',
       cost: '40',
@@ -149,12 +134,7 @@ export class PostersComponent implements OnInit {
       image: 'assets/images/poster1/poster28.jpg',
       heading: 'Voice Noice',
       cost: '40',
-    },
-    {
-      image: 'assets/images/poster1/poster29.jpg',
-      heading: 'Congratulations on Your Voice',
-      cost: '40',
-    },
+    }
   ];
 
   ngOnInit(): void {

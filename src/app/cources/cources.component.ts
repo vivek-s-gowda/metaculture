@@ -70,7 +70,7 @@ export class CourcesComponent implements OnInit {
       helps correct erroneous beliefs and logical fallacies that make us part of the problem- while helping
       establish realistic expectations for what our democracies can be.`,
       cost: '250',
-      startsFrom : 'Starting: Saturday, February 4th, 2023'
+      startsFrom : 'TBD'
     },
   ];
 
